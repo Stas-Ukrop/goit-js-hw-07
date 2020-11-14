@@ -3,9 +3,9 @@ let destroy=document.getElementById('controls').childNodes[5];
 
 
 render.addEventListener('click',createBoxes);
-function createBoxes(){
-    let numb=Number(document.getElementById('controls').childNodes[1].value);
+function createBoxes(){    
     let boxes=document.getElementById('boxes');    
+    let numb=Number(document.getElementById('controls').childNodes[1].value);
     let totalDiv=boxes.querySelectorAll('div').length;
     createDiv(boxes,numb,totalDiv);
 };
