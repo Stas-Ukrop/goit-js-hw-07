@@ -6,16 +6,17 @@ const ingredients = [
     'Зелень',
     'Приправы',
   ];
-
-
-  let addLi=function(arr,id){
-      for(let i=0;i<arr.length;i+=1){
-          let newLi=document.createElement('li');
-          newLi.textContent=arr[i];
-          id.append(newLi);
-      }
-  }
-
-const ing=document.getElementById('ingredients');
-
-console.log(addLi(ingredients,ing));
+  const ing=document.getElementById('ingredients');
+  
+  //первый способ
+let addLi=ingredients.map(el=>{
+    ing.insertAdjacentHTML('afterbegin',`<li>${el}</li>`);
+});
+//второй способ
+ing.innerHTML=ingredients.map(el=>{    
+    return `<li>${el}</li>`;
+}).join('');
+//третий способ
+ing.innerHTML=ingredients.reduce((sum,elem)=>{
+    return sum+`<li>${elem}</li>`;
+},'');

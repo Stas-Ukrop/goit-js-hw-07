@@ -5,7 +5,7 @@ let ul=parent.querySelectorAll('ul');
 
 
 console.log(`В списке ${parent.getElementsByClassName('item').length} категории.`);
-for(let i=0;i<ul.length;i+=1){
-    console.log(`Категория: ${h2[i].innerText} 
-Количество элементов: ${ul[i].querySelectorAll('li').length}`);
-}
+h2.forEach((elem,index) => {
+    console.log(`Категория: ${elem.innerText} 
+// Количество элементов: ${ul[index].querySelectorAll('li').length}`);
+});
